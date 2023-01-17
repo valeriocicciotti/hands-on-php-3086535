@@ -14,7 +14,12 @@ $extensions = array();
 foreach ($files as $file) {
 	$ext = pathinfo($file, PATHINFO_EXTENSION);
 	if (! empty($ext)) {
-		$extensions[$ext] = ($extensions[$ext] ? ($extensions[$ext] + 1) : 1);
+		// $extensions[$ext] = ($extensions[$ext] ? ($extensions[$ext] + 1) : 1);
+		if(!$extensions[$ext]){
+			$extensions[$ext] = 1;
+		} else{
+			$extensions[$ext] = $extensions[$ext] + 1;
+		}
 	}
 }
 
