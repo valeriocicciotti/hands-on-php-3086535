@@ -25,12 +25,14 @@ foreach ($files as $file) {
 		// }
 
 		//2b
-		if (!isset($extensions[$ext])) {
-			$extensions[$ext] = 1;
-		} else{
-			$extensions[$ext] = $extensions[$ext] + 1;
-		}
+		// if (!isset($extensions[$ext])) {
+		// 	$extensions[$ext] = 1;
+		// } else{
+		// 	$extensions[$ext] = $extensions[$ext] + 1;
+		// }
 
+		//1b
+		$extensions[$ext] = ($extensions[$ext] ?? 0) + 1;
 	}
 }
 
